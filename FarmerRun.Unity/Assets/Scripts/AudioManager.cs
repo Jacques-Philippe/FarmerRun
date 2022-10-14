@@ -56,6 +56,7 @@ public class AudioManager : MonoBehaviour
     {
         Debug.Log("Playing game over music");
         this.ChangePlayedSong(to: this.GameOverMusic);
+        this.source.loop = false;
     }
 
     
