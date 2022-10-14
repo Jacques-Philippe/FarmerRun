@@ -499,10 +499,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIManager
       objectReference: {fileID: 0}
-    - target: {fileID: 1829228435844548258, guid: 2d951ec18ec5adb409361ab105e9d405, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1829228435844548260, guid: 2d951ec18ec5adb409361ab105e9d405, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -718,10 +714,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScoreManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6507669716283556495, guid: 4944f226508e0e046a2ec4cf15fd5775, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4944f226508e0e046a2ec4cf15fd5775, type: 3}
 --- !u!1001 &7106884847179810372
@@ -845,10 +837,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 144078607, guid: 6005b6b4424bff9419f8fb3baaacbe09, type: 3}
-      propertyPath: Loop
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8691412486361179933, guid: 6005b6b4424bff9419f8fb3baaacbe09, type: 3}
       propertyPath: m_Name
       value: AudioManager
