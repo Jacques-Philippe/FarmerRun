@@ -12,6 +12,11 @@ public class PlayerAudio : MonoBehaviour
     /// </summary>
     private AudioSource source;
 
+    private void Start()
+    {
+        this.source = this.GetComponent<AudioSource>();
+    }
+
     public void PlayJumpSound()
     {
         var randIndex = Random.Range(0, mJumpSounds.Count);
