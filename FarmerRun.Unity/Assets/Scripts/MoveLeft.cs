@@ -16,7 +16,7 @@ public class MoveLeft : MonoBehaviour
 
     private IEnumerator Move()
     {
-        Vector3 movement = -Vector3.forward * speed * Time.deltaTime;
+        Vector3 movement = -Vector3.forward * speed * Time.fixedDeltaTime;
         yield return new WaitUntil(() =>
         {
             this.transform.Translate(movement, Space.World);
