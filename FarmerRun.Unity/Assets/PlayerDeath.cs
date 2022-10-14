@@ -21,6 +21,10 @@ public class PlayerDeath : MonoBehaviour
     {
         yield return new WaitUntil(() => this.mGameManager.IsGameOver);
         this.mAnimator.SetBool("Death_b", true);
+        this.mAnimator.SetInteger("DeathType_int", 1);
+        //to move the player away from the fence
+        Vector3 displacement = -Vector3.forward * 0.5f;
+        this.transform.position += displacement;
     }
     
 }
