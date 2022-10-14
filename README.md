@@ -62,4 +62,4 @@ When the game is reset, the game scene is reloaded.
 
 # Hosted project
 
-[Here]()
+[Here](https://play.unity.com/mg/other/webgl-builds-258950)
