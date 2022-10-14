@@ -51,7 +51,10 @@ public class ObstacleFactory : MonoBehaviour
     private IEnumerator DestroyAfterSeconds(GameObject obj, float seconds)
     {
         yield return new WaitForSeconds(seconds);
-        GameObject.Destroy(obj);
+        if (!this.gameManager.IsGameOver)
+        {
+            GameObject.Destroy(obj);
+        }
     }
 
 }
