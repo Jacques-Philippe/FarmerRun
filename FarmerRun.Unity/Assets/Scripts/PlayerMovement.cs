@@ -15,6 +15,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator animator;
 
+    private PlayerAudio playerAudio;
+
     /// <summary>
     /// whether or not the player is currently jumping (includes falling)
     /// </summary>
@@ -28,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         this.mGameManager = GameObject.FindObjectOfType<GameManager>();
         this.rigidBody = this.GetComponent<Rigidbody>();
         this.animator = this.GetComponent<Animator>();
+
+        this.playerAudio = this.GetComponent<PlayerAudio>();
+
         this.isJumping = false;
     }
 
@@ -36,6 +41,7 @@ public class PlayerMovement : MonoBehaviour
         this.rigidBody.AddForce(this.transform.up * this.upwardsForceMagnitude, ForceMode.Impulse);
         this.isJumping = true;
         this.animator.SetTrigger("Jump_trig");
+        this.playerAudio.PlayJumpSound();
     }
 
     private void OnCollisionEnter(Collision other)
