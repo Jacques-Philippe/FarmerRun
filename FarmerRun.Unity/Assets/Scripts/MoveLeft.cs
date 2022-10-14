@@ -4,14 +4,23 @@ using UnityEngine;
 
 public class MoveLeft : MonoBehaviour
 {
-
     public float speed;
 
+    private GameManager mGameManager;
 
-    private void Update()
+    private void Start()
     {
-        this.transform.Translate(-Vector3.forward * speed * Time.deltaTime, Space.World);
+        this.mGameManager = GameObject.FindObjectOfType<GameManager>();
+        StartCoroutine(Move());
     }
 
-
+    private IEnumerator Move()
+    {
+        Vector3 movement = -Vector3.forward * speed * Time.deltaTime;
+        yield return new WaitUntil(() =>
+        {
+            this.transform.Translate(movement, Space.World);
+            return this.mGameManager.IsGameOver;
+        });
+    }
 }
