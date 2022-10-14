@@ -10,6 +10,9 @@ public class PlayerMovement : MonoBehaviour
     /// The magnitude of the force by which the player jumps
     /// </summary>
     public float upwardsForceMagnitude;
+    
+    [SerializeField]
+    private ParticleSystem mDirtParticleSystem;
 
     private Rigidbody rigidBody;
 
@@ -33,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
 
         this.playerAudio = this.GetComponent<PlayerAudio>();
 
+
         this.isJumping = false;
     }
 
@@ -42,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
         this.isJumping = true;
         this.animator.SetTrigger("Jump_trig");
         this.playerAudio.PlayJumpSound();
+        this.mDirtParticleSystem.Stop();
     }
 
     private void OnCollisionEnter(Collision other)
@@ -51,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         if (otherIsFloor)
         {
             this.isJumping = false;
+            this.mDirtParticleSystem.Play();
         }
         else if (otherIsObstacle && !this.mGameManager.IsGameOver)
         {
