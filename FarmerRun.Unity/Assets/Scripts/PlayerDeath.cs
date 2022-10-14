@@ -12,6 +12,12 @@ public class PlayerDeath : MonoBehaviour
     private ParticleSystem mBootDirt;
 
     /// <summary>
+    /// The explosion particles on player death
+    /// </summary>
+    [SerializeField]
+    private ParticleSystem mExplosion;
+
+    /// <summary>
     /// A reference to our game manager so we can keep track of whether or not the game is over
     /// </summary>
     private GameManager mGameManager;
@@ -39,6 +45,7 @@ public class PlayerDeath : MonoBehaviour
         this.mBootDirt.Stop();
         this.mAnimator.SetBool("Death_b", true);
         this.mAnimator.SetInteger("DeathType_int", 1);
+        this.mExplosion.Play();
         
         //to move the player away from the fence
         Vector3 displacement = -Vector3.forward * 1.0f;
